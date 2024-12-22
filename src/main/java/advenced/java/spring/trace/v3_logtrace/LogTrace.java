@@ -1,4 +1,4 @@
-package advenced.java.spring.trace.logtrace;
+package advenced.java.spring.trace.v3_logtrace;
 
 import advenced.java.spring.trace.TraceStatus;
 

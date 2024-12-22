@@ -1,8 +1,7 @@
 package advenced.java.spring.config;
 
-import advenced.java.spring.trace.logtrace.FieldLogTrace;
-import advenced.java.spring.trace.logtrace.LogTrace;
-import advenced.java.spring.trace.logtrace.ThreadLocalLogTrace;
+import advenced.java.spring.trace.v3_logtrace.LogTrace;
+import advenced.java.spring.trace.v3_logtrace.ThreadLocalLogTrace;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
