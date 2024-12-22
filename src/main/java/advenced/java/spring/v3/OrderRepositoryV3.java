@@ -1,16 +1,17 @@
-package advenced.java.spring.v1;
+package advenced.java.spring.v3;
 
 import advenced.java.spring.trace.TraceStatus;
-import advenced.java.spring.trace.rawtrace.TraceV1;
+import advenced.java.spring.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderRepositoryV1 {
+public class OrderRepositoryV3 {
 
-    private final TraceV1 trace;
+    private final LogTrace trace;
     public void save(String itemId) {
+
         TraceStatus status = null;
         try {
             status = trace.begin("OrderRepository.save()");
@@ -24,6 +25,7 @@ public class OrderRepositoryV1 {
             trace.exception(status, e);
             throw e;
         }
+
     }
     private void sleep(int millis) {
         try {

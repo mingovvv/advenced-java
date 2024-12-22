@@ -1,21 +1,23 @@
-package advenced.java.spring.v1;
+package advenced.java.spring.v3;
 
 import advenced.java.spring.trace.TraceStatus;
-import advenced.java.spring.trace.rawtrace.TraceV1;
+import advenced.java.spring.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class OrderControllerV1 {
+public class OrderControllerV3 {
 
-    private final OrderServiceV1 orderService;
-    private final TraceV1 trace;
+    private final OrderServiceV3 orderService;
+    private final LogTrace trace;
 
-    @GetMapping("/v1/request")
+    @GetMapping("/v3/request")
     public String request(String itemId) {
+
         TraceStatus status = null;
+
         try {
             status = trace.begin("OrderController.request()");
             orderService.orderItem(itemId);
@@ -25,6 +27,7 @@ public class OrderControllerV1 {
             trace.exception(status, e);
             throw e; //예외를 꼭 다시 던져주어야 한다.
         }
+
     }
 
 }

@@ -1,7 +1,7 @@
 package advenced.java.spring.v2;
 
 import advenced.java.spring.trace.TraceStatus;
-import advenced.java.spring.trace.v1.TraceV2;
+import advenced.java.spring.trace.rawtrace.TraceV2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
